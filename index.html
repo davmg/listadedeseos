@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de deseos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Krona+One&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
+    <link rel="stylesheet" href="styles/style.css?v=1">
+
+    <!-- Other meta tags like title, description, etc. -->
+
+    <meta property="og:title" content="Lista de deseos" />
+    <meta property="og:type" content="website" /> <!-- or 'article', 'blog', 'video.movie', etc. -->
+    <meta property="og:image" content="https://davmg.github.io/giovannaydavid/imgs/ogimage.png" />
+
+    <!-- Optional but recommended tags -->
+    <meta property="og:description" content="¡Nos mudamos!" />
+    <meta property="og:image:width" content="700" />
+    <meta property="og:image:height" content="520" />
+</head>
+
+<body>
+    <p class="title-text">Lista de deseos</p>
+
+    <!-- Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modal-image" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-name"></h2>
+                    <p id="modal-store" class="modal-store"></p>
+                    <p id="modal-category" class="modal-category"></p>
+                    <p id="modal-price" class="modal-price"></p>
+                    <p id="modal-quantity" class="modal-quantity"></p>
+                    <a id="modal-link" class="button" target="_blank">Ver en tienda</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <!-- Filter Controls -->
+        <div class="filter-container">
+            <!-- Sort Controls -->
+            <div class="filter-section">
+                <h3 class="filter-label">Ordenar por:</h3>
+                <div class="chips-group" id="sort-chips">
+                    <button class="chip" data-sort="name">Nombre A-Z</button>
+                    <button class="chip" data-sort="price-asc">Precio ↑</button>
+                    <button class="chip" data-sort="price-desc">Precio ↓</button>
+                </div>
+            </div>
+    
+            <!-- Store Filter -->
+            <div class="filter-section">
+                <h3 class="filter-label">Tienda:</h3>
+                <div class="chips-group" id="store-chips"></div>
+            </div>
+    
+            <!-- Category Filter -->
+            <div class="filter-section">
+                <h3 class="filter-label">Categoría:</h3>
+                <div class="chips-group" id="category-chips"></div>
+            </div>
+    
+            <!-- Reset Button -->
+            <button class="reset-btn" id="reset-filters">Limpiar filtros</button>
+        </div>
+        
+        <div id="product-section">
+            <div id="product-list">
+                <div class="product-card">
+                    <div class="img-container">
+                        <p class="store-tag">IKEA</p>
+                        <img src="imgs/6.png" alt="">
+                    </div>
+                    <h2 class="title-text">Especiero</h2>
+                    <p class="price-tag">$40.000</p>
+                    <p>Disponibles: 2</p>
+                </div>
+            </div>
+            <div id="loader" class="loader"></div>
+        </div>
+    </div>
+
+    <script src="script.js?v=1"></script>
+</body>
