@@ -44,7 +44,7 @@
                 return rows;
             }
 
-            async function loadProducts() {
+            async function loadProductsCSV() {
                 try {
                     const responseG = await fetch("docs/list.csv");
                     const csvTextG = await responseG.text();
@@ -118,7 +118,7 @@
                         </div>
                         <h2>${product.name}</h2>
                         <p class="price-tag"><span class="currency">$${price}</span></p>
-                        <p>Quantity: ${product.quantity}</p>
+                        <p class="reserved-tag">Reservados: ${product.reserved}/${product.quantity}</p>
                     `;
 
                     // Add click handler to open modal
