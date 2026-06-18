@@ -288,7 +288,7 @@
                 document.getElementById('modal-category').textContent = `Categoría: ${product.category}`;
                 document.getElementById('modal-price').textContent = `Precio: $${price}`;
                 document.getElementById('modal-quantity').textContent = `Disponibles: ${product.quantity}`;
-                console.log(product.link);
+
                 if(product.link != ""){
                     document.getElementById('modal-link').style.display = 'block';
                     document.getElementById('modal-link').href = product.link;
