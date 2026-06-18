@@ -108,12 +108,13 @@
                     const card = document.createElement('div');
                     const imagePath = `imgs/${product.id}.png`; // Assuming images are named by product ID
                     const price = Number(product.price).toLocaleString();
+                    const storeNull = product.store=="Sin tienda"?"style='display:none;'":"";
+
 
                     card.className = 'product-card';
-                    console.log(price);
                     card.innerHTML = `
                         <div class="img-container">
-                            <p class="store-tag">${product.store}</p>
+                            <p ${storeNull} class="store-tag">${product.store}</p>
                             <img src="${imagePath}" alt="${product.name}">
                         </div>
                         <h2>${product.name}</h2>
@@ -239,14 +240,14 @@
                     stores: [],
                     categories: []
                 };
-                
+
                 document.querySelectorAll('.chip').forEach(chip => {
                     chip.classList.remove('active');
                 });
-                
+
                 const nameChip = document.querySelector('[data-sort="name"]');
                 if (nameChip) nameChip.classList.add('active');
-                
+
                 applyFiltersAndSort();
             }
 
@@ -287,7 +288,13 @@
                 document.getElementById('modal-category').textContent = `Categoría: ${product.category}`;
                 document.getElementById('modal-price').textContent = `Precio: $${price}`;
                 document.getElementById('modal-quantity').textContent = `Disponibles: ${product.quantity}`;
-                document.getElementById('modal-link').href = product.link;
+                console.log(product.link);
+                if(product.link != ""){
+                    document.getElementById('modal-link').style.display = 'block';
+                    document.getElementById('modal-link').href = product.link;
+                }else{
+                    document.getElementById('modal-link').style.display = 'none';
+                }
 
                 modal.style.display = 'block';
             }
@@ -306,7 +313,7 @@
                 const closeBtn = document.querySelector('.modal-close');
 
                 closeBtn.addEventListener('click', closeModal);
-                
+
                 window.addEventListener('click', (event) => {
                     if (event.target === modal) {
                         closeModal();

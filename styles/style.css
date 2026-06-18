@@ -157,6 +157,11 @@ body {
     right: 0;
 }
 
+.reserved-tag{
+    font-family: var(--body);
+    font-size: 14px;
+}
+
 .body-text {
     font-family: var(--body);
     font-size: 16px;
