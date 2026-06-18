@@ -32,20 +32,37 @@
     <!-- Modal -->
     <div id="product-modal" class="modal">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
             <div class="modal-body">
                 <div class="modal-img-container">
                     <img id="modal-image" src="" alt="">
+                    <a id="modal-link" class="link" target="_blank">
+                        Ver en tienda
+                        <svg class="external-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
                 </div>
                 <div class="modal-details">
                     <h2 id="modal-name"></h2>
-                    <p id="modal-store" class="modal-store"></p>
-                    <p id="modal-category" class="modal-category"></p>
-                    <p id="modal-price" class="modal-price"></p>
+                    <div id="modal-price-container">
+                        <p id="modal-price" class="modal-price"></p>
+                        <p id="modal-suggested-price">(Precio aproximado)</p>
+                    </div>
                     <p id="modal-quantity" class="modal-quantity"></p>
-                    <a id="modal-link" class="button" target="_blank">Ver en tienda</a>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                        <p class="progress-label"><span id="progress-reserved">0</span> de <span id="progress-total">0</span> reservados</p>
+                    </div>
+                    <button id="modal-gift-button" class="button">Quiero darles este regalo</button>
+                    <p> ¿Cuántos?</p>
+                    <p id="modal-number">0</p>
                 </div>
             </div>
+            <span class="modal-close">&times;</span>
         </div>
     </div>
 
@@ -72,6 +89,14 @@
             <div class="filter-section">
                 <h3 class="filter-label">Categoría:</h3>
                 <div class="chips-group" id="category-chips"></div>
+            </div>
+
+            <!-- Availability Filter -->
+            <div class="filter-section">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="available-only-filter">
+                    <span>Mostrar solo regalos disponibles</span>
+                </label>
             </div>
     
             <!-- Reset Button -->
