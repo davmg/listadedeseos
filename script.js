@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById('progress-reserved').textContent = reservedCount;
         document.getElementById('progress-total').textContent = totalCount;
-        document.getElementById('progress-fill').style.width = progressPercentage + '%';
+        document.getElementById('progress-fill').style.width = progressPercentage<=0 ? '2%' : progressPercentage + '%';
         reserveButton.dataset.productId = product.id;
 
         reserveButton.addEventListener('click', async function () {
